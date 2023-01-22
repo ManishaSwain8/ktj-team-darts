@@ -3,7 +3,6 @@ import red from "../assets/red.jpg";
 
 // import { Link } from "react-router-dom";
 
-
 import { BsFacebook } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { BsDiscord } from "react-icons/bs";
@@ -51,28 +50,23 @@ export default function Login() {
           <br />
           <br />
           <div className="items-center">
-
             Or <a href="#login">login</a> with
             <br />
             <a href="#register">Don't have an account? Register.</a>
           </div>{" "}
-
-            <p className="text-center">Or login with</p>
-            <br />
-
-            <div className="flex gap-4">
-              {FOT_LIST.map((foot, index) => (
-                <div className="" key={index}>
-                  <a target="_blank" href="#">
-                    <div className="rounded-2xl">{foot.img}</div>
-                  </a>
-                </div>
-              ))}
-            </div>
-            <br />
-            <p className="text-center">Don't have an account? Register.</p>
+          <p className="text-center">Or login with</p>
+          <br />
+          <div className="flex gap-4">
+            {FOT_LIST.map((foot, index) => (
+              <div className="" key={index}>
+                <a target="_blank" href="#">
+                  <div className="rounded-2xl">{foot.img}</div>
+                </a>
+              </div>
+            ))}
           </div>
-
+          <br />
+          <p className="text-center">Don't have an account? Register.</p>
         </form>
       </div>
     </div>
