@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-const sideBarCss = "test-center p-4 border-white hover:bg-purple-600";
+const sideBarCss = "test-center p-4 border-white hover:bg-[#9e1111]";
 export default function SideBar() {
   const navigate = useNavigate();
   const handleOnClick = (path) => {
@@ -9,7 +9,7 @@ export default function SideBar() {
   };
   const handleOnLogout = (path) => console.log("LOGOUT" + path);
   return (
-    <div className="w-[25%] hidden sm:block bg-black text-white">
+    <div className="w-[20%] hidden sm:block bg-black text-white">
       <div>
         <div onClick={() => handleOnClick("/")} className={sideBarCss}>
           Home
