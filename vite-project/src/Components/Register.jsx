@@ -13,9 +13,28 @@ export default function Register() {
 
   const onSubmit = (e) => {
     axios
-      .post("https://ap-south-1.aws.data.mongodb-api.com/app/data-iuasu/endpoint/data/v1/action/insertOne", {
-        header: { "api-key": "MbNUDJJjGFkcBsIaLzGSOJtOxZazEGwYR62FdeF1RrabOkbAPLpliilYCSK9iOQN" },
-      })
+      .post(
+        "https://ap-south-1.aws.data.mongodb-api.com/app/data-iuasu/endpoint/data/v1/action/insertOne",
+        {
+          collection: "user",
+          database: "smartathon",
+          dataSource: "iitkgp-webathon",
+          document: {
+            name: profileInfo.fullName,
+            email: profileInfo.email,
+            gender: profileInfo.gender,
+            photo: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+            password: "nayak1234",
+            institution: "GITA",
+            jobtitle: "Student",
+            state: "Odisha",
+            country: "INDIA",
+          },
+        },
+        {
+          header: { "api-key": "MbNUDJJjGFkcBsIaLzGSOJtOxZazEGwYR62FdeF1RrabOkbAPLpliilYCSK9iOQN" },
+        }
+      )
       .then(() => {
         navigate("/");
       })
