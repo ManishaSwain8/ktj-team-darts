@@ -1,11 +1,9 @@
 import React from "react";
 
-function About() {
+export default function () {
   return (
-    <div>
-      <div className="place-content-center h-12  border-r-stone-800 w-80 bg-black"></div>
+    <div className="justify-center">
+      <div className="mt-8 rounded-md  w-96 h-48  border-2  border-gray-100 shadow-xl "></div>
     </div>
   );
 }
-
-export default About;

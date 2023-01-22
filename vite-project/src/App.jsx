@@ -1,12 +1,17 @@
 import "./App.css";
-// import Home from "./Components/Home";
-// import About from "./Components/About";
-import Login from "./Components/Login";
+//import Home from "./Components/Home";
+//import About from "./Components/About";
+//import Login from "./Components/Login";
+//import Register from "./Components/Register";
+import Profile from "./Components/Profile";
 function App() {
   return (
     <div>
-      {/* <Home />, <About /> */}
-      <Login />
+      {/* <Login /> */}
+      {/* <Register /> */}
+      {/* <Home />
+      <About /> */}
+      <Profile />
     </div>
   );
 }

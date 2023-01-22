@@ -3,48 +3,57 @@ import red from "../assets/red.jpg";
 export default function Login() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
-      <div className="hidden sm:block">
-        <div className="justify-center">
-          <h1 className="text-white -mt-5 text-center">
-            Connect with your team.
-          </h1>{" "}
-        </div>
-        <img className="w-full h-full object-cover " src={red} alt="" />
+      <div className="">
+        <div className="justify-center"></div>
+        <img
+          className="w-full h-full object-cover   max-md:w-full "
+          src={red}
+          alt=""
+        />
       </div>
 
-      <div className="bg-white flex flex-col justify-center">
-        <form className="max-w-[400px] w-full mx-auto bg-white p-4">
-          <h2 className="text-6xl font-bold text-center py-6">Welcome back!</h2>
-          <div className="text-xl flex-flex-col py-2">
-            <label>Username</label>
-            <input className="border rounded-full p-3 ml-1 mx-56" type="text" />
-          </div>
-          <div className="text-xl flex-flex-col py-2 gap-2 ">
-            <label>Password</label>
-            <input
-              className="border rounded-full p-3 ml-1 mx-56"
-              type="password"
-            />
+      <div className="bg-white flex flex-col justify-center ">
+        <form className="max-w-[400px] w-full mx-auto bg-white ">
+          <h2 className="text-5xl font-bold text-center py-6 text-[#9e1111]">
+            Welcome back!
+          </h2>
+          <div className="text-xl flex-flex-col py-2 text-gray-500 ">
+            <div>
+              <label>Username</label>
+              <input
+                className="border rounded-full p-3 ml-0 w-96"
+                type="text"
+              />
+            </div>
+            <br />
+            <div>
+              <label>Password</label>
+              <input
+                className="border rounded-full p-3 ml-0 w-96"
+                type="password"
+              />
+            </div>
           </div>
 
-          <div className="flex justify-between">
+          <div className="flex justify-between ">
             <p className="flex items-center mr-2">
-              <input className="mr-2" type="checkbox" />
+              <input className="mr-2 " type="checkbox" />
               Remember me
             </p>
             <p>Forgot Password?</p>
           </div>
-          <button className="border w-full my-5 py-3 bg-[#BF3737] hover:bg-[#c91d1d] text-white rounded-full">
+          <br />
+          <button className="border w-full my-5 py-3 bg-[#9e1111] hover:bg-[#d61313] text-white rounded-full">
             Login
           </button>
           <br />
           <br />
           <div className="items-center">
-            <p>Or login with</p>
+            <p className="text-center">Or login with</p>
             <br />
             <br />
 
-            <p>Don't have an account? Register.</p>
+            <p className="text-center">Don't have an account? Register.</p>
           </div>
         </form>
       </div>
