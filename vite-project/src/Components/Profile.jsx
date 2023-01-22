@@ -1,6 +1,8 @@
 import React from "react";
 import red from "../assets/red.jpg";
 import po from "../assets/po.jpg";
+// import { IoPersonSharp } from "react-icons/io";
+// import { IoPersonSharp } from "react-icons/io5";
 
 export default function () {
   return (
@@ -24,10 +26,7 @@ export default function () {
           <br />
           <div>
             <label>Last name:</label>
-            <input
-              className="border rounded-full p-3 ml-0 w-96"
-              type="password"
-            />
+            <input className="border rounded-full p-3 ml-0 w-96" type="password" />
           </div>
           <br />
           <div>

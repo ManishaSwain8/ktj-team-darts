@@ -1,59 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import red from "../assets/red.jpg";
+import axios from "axios";
+
 export default function Register() {
+  const [profileInfo, setProfileInfo] = useState({ fullName: "", email: "", password: "", confirmPassword: "", gender: "" });
+  const onHandleChange = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setProfileInfo({ ...profileInfo, [name]: value });
+  };
+
+  const onSubmit = (e) => {
+    axios
+      .post(
+        "https://ap-south-1.aws.data.mongodb-api.com/app/data-iuasu/endpoint/data/v1/action/insertOne",
+        {
+          collection: "user",
+          database: "smartathon",
+          dataSource: "iitkgp-webathon",
+          document: {
+            name: profileInfo.fullName,
+            email: profileInfo.email,
+            gender: profileInfo.gender,
+            photo: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+            password: "nayak1234",
+            institution: "GITA",
+            jobtitle: "Student",
+            state: "Odisha",
+            country: "INDIA",
+          },
+        },
+        {
+          header: { "api-key": "MbNUDJJjGFkcBsIaLzGSOJtOxZazEGwYR62FdeF1RrabOkbAPLpliilYCSK9iOQN" },
+        }
+      )
+      .then(() => {
+        navigate("/");
+      })
+      .catch(() => {
+        console.error("ERROR");
+      });
+  };
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
       <div className="">
-        <img
-          className="w-full h-full object-cover  max-md:w-full max-md:h-32"
-          src={red}
-          alt=""
-        />
+        <img className="w-full h-full object-cover  max-md:w-full max-md:h-32" src={red} alt="" />
       </div>
 
       <div className="bg-white flex-none min-sm:flex justify-center">
         <form className="max-w-[400px] w-full  mx-auto bg-white  ">
           <h2 className="text-5xl font-bold text-[#9e1111] py-4">Register</h2>
-          <p className="text-lg text-gray-400">
-            Share yourself to hangout with us!
-          </p>
+          <p className="text-lg text-gray-400">Share yourself to hangout with us!</p>
           <br />
           <div className="text-xl flex-flex-col py-2 text-gray-500 ">
             <div>
-              <label>First name</label>
-              <input
-                className="border rounded-full p-3 ml-0 w-96"
-                type="text"
-              />
-            </div>
-            <div>
-              <label>Last name</label>
-              <input
-                className="border rounded-full p-3 ml-0  w-96"
-                type="text"
-              />
+              <label>Full name</label>
+              <input className="border rounded-full p-3 ml-0 w-96" type="text" name="fullName" value={profileInfo.fullName} onChange={onHandleChange} />
             </div>
             <div>
               <label>Email</label>
-              <input
-                className="border rounded-full p-3 ml-0 w-96"
-                type="gmail"
-              />
+              <input className="border rounded-full p-3 ml-0 w-96" type="gmail" name="email" value={profileInfo.email} onChange={onHandleChange} />
             </div>
-
             <div>
               <label>Password</label>
-              <input
-                className="border rounded-full p-3 ml-0 w-96"
-                type="password"
-              />
+              <input className="border rounded-full p-3 ml-0 w-96" type="password" name="password" value={profileInfo.password} onChange={onHandleChange} />
             </div>
             <div>
               <label>Confirm Password</label>
-              <input
-                className="border rounded-full p-3 ml-0 w-96"
-                type="password"
-              />
+              <input className="border rounded-full p-3 ml-0 w-96" type="password" name="confirmPassword" value={profileInfo.confirmPassword} onChange={onHandleChange} />
             </div>
             <div>
               <label>Gender</label>
@@ -75,10 +90,10 @@ export default function Register() {
             <br />
 
             <div className="justify-center">
-              <button className="border w-full my-5 py-4 text-bold bg-[#9e1111] hover:bg-[#c91d1d] text-white rounded-full">
-                Let's go!
-              </button>
-              <p className="text-center">Already have an account?</p>
+              <button className="border w-full my-5 py-4 text-bold bg-[#9e1111] hover:bg-[#c91d1d] text-white rounded-full">Let's go!</button>
+              <Link to={"login"} className="text-center">
+                Already have an account?
+              </Link>
             </div>
           </div>
         </form>

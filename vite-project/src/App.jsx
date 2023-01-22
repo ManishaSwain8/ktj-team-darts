@@ -14,16 +14,15 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
-        <Route exact path="/about" element={<About />}></Route>
-        <Route exact path="/login" element={<Login />}></Route>
-        <Route exact path="/view" element={<PostView />}></Route>
-        <Route exact path="/post-input" element={<PostInput />}></Route>
-        <Route exact path="/profile" element={<Profile />}></Route>
-        <Route exact path="/accpet" element={<Profile />}></Route>
-        <Route exact path="/registration" element={<Register />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/view" element={<PostView />}></Route>
+        <Route path="/post-input" element={<PostInput />}></Route>
+        <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/accpet" element={<Profile />}></Route>
+        <Route path="/registration" element={<Register />}></Route>
       </Routes>
     </Router>
-
   );
 }
 
