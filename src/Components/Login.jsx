@@ -1,37 +1,26 @@
 import React from "react";
 import red from "../assets/red.jpg";
+import { Link } from "react-router-dom";
 export default function Login() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
       <div className="">
         <div className="justify-center"></div>
-        <img
-          className="w-full h-full object-cover   max-md:w-full "
-          src={red}
-          alt=""
-        />
+        <img className="w-full h-full object-cover   max-md:w-full " src={red} alt="" />
       </div>
 
       <div className="bg-white flex flex-col justify-center ">
         <form className="max-w-[400px] w-full mx-auto bg-white ">
-          <h2 className="text-5xl font-bold text-center py-6 text-[#9e1111]">
-            Welcome back!
-          </h2>
+          <h2 className="text-5xl font-bold text-center py-6 text-[#9e1111]">Welcome back!</h2>
           <div className="text-xl flex-flex-col py-2 text-gray-500 ">
             <div>
               <label>Username</label>
-              <input
-                className="border rounded-full p-3 ml-0 w-96"
-                type="text"
-              />
+              <input className="border rounded-full p-3 ml-0 w-96" type="text" />
             </div>
             <br />
             <div>
               <label>Password</label>
-              <input
-                className="border rounded-full p-3 ml-0 w-96"
-                type="password"
-              />
+              <input className="border rounded-full p-3 ml-0 w-96" type="password" />
             </div>
           </div>
 
@@ -43,13 +32,13 @@ export default function Login() {
             <p>Forgot Password?</p>
           </div>
           <br />
-          <button className="border w-full my-5 py-3 bg-[#9e1111] hover:bg-[#d61313] text-white rounded-full">
-            Login
-          </button>
+          <button className="border w-full my-5 py-3 bg-[#9e1111] hover:bg-[#d61313] text-white rounded-full">Login</button>
           <br />
           <br />
           <div className="items-center">
-            <p className="text-center">Don't have an account? Register.</p>
+            <p className="text-center">
+              Don't have an account? <Link to="/registration">Register</Link> .
+            </p>
           </div>
         </form>
       </div>

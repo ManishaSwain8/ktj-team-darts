@@ -30,8 +30,7 @@ export default function Register() {
             name: profileInfo.fullName,
             email: profileInfo.email,
             gender: profileInfo.gender || "other",
-            photo:
-              "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+            photo: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
             password: profileInfo.password,
             institution: "GITA",
             jobtitle: "Student",
@@ -41,9 +40,8 @@ export default function Register() {
         },
         {
           headers: {
-            "api-key":
-              "MbNUDJJjGFkcBsIaLzGSOJtOxZazEGwYR62FdeF1RrabOkbAPLpliilYCSK9iOQN",
-            Accept: "*/*",
+            "api-key": "MbNUDJJjGFkcBsIaLzGSOJtOxZazEGwYR62FdeF1RrabOkbAPLpliilYCSK9iOQN",
+
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
           },
@@ -60,60 +58,30 @@ export default function Register() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
       <div className="">
-        <img
-          className="w-full h-full object-cover  max-md:w-full max-md:h-32"
-          src={red}
-          alt=""
-        />
+        <img className="w-full h-full object-cover  max-md:w-full max-md:h-32" src={red} alt="" />
       </div>
 
       <div className="bg-white flex-none min-sm:flex justify-center">
         <form className="max-w-[400px] w-full  mx-auto bg-white  ">
           <h2 className="text-5xl font-bold text-[#9e1111] py-4">Register</h2>
-          <p className="text-lg text-gray-400">
-            Share yourself to hangout with us!
-          </p>
+          <p className="text-lg text-gray-400">Share yourself to hangout with us!</p>
           <br />
           <div className="text-xl flex-flex-col py-2 text-gray-500 ">
             <div>
               <label>Full name</label>
-              <input
-                className="border rounded-full p-3 ml-0 w-96"
-                type="text"
-                name="fullName"
-                value={profileInfo.fullName}
-                onChange={onHandleChange}
-              />
+              <input className="border rounded-full p-3 ml-0 w-96" type="text" name="fullName" value={profileInfo.fullName} onChange={onHandleChange} />
             </div>
             <div>
               <label>Email</label>
-              <input
-                className="border rounded-full p-3 ml-0 w-96"
-                type="gmail"
-                name="email"
-                value={profileInfo.email}
-                onChange={onHandleChange}
-              />
+              <input className="border rounded-full p-3 ml-0 w-96" type="gmail" name="email" value={profileInfo.email} onChange={onHandleChange} />
             </div>
             <div>
               <label>Password</label>
-              <input
-                className="border rounded-full p-3 ml-0 w-96"
-                type="password"
-                name="password"
-                value={profileInfo.password}
-                onChange={onHandleChange}
-              />
+              <input className="border rounded-full p-3 ml-0 w-96" type="password" name="password" value={profileInfo.password} onChange={onHandleChange} />
             </div>
             <div>
               <label>Confirm Password</label>
-              <input
-                className="border rounded-full p-3 ml-0 w-96"
-                type="password"
-                name="confirmPassword"
-                value={profileInfo.confirmPassword}
-                onChange={onHandleChange}
-              />
+              <input className="border rounded-full p-3 ml-0 w-96" type="password" name="confirmPassword" value={profileInfo.confirmPassword} onChange={onHandleChange} />
             </div>
             <div>
               <label>Gender</label>
@@ -135,10 +103,7 @@ export default function Register() {
             <br />
 
             <div className="justify-center">
-              <button
-                onClick={onHandleSubmit}
-                className="border w-full my-5 py-4 text-bold bg-[#9e1111] hover:bg-[#c91d1d] text-white rounded-full"
-              >
+              <button onClick={onHandleSubmit} className="border w-full my-5 py-4 text-bold bg-[#9e1111] hover:bg-[#c91d1d] text-white rounded-full">
                 Let's go!
               </button>
               <Link to={"login"} className="text-center">
