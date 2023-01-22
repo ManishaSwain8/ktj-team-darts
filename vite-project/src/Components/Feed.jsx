@@ -2,7 +2,7 @@ import React from "react";
 
 const Feed = () => {
   return (
-    <div className="w-[80%] sm:w-[60%] bg-white rounded-xl mx-auto px-5 py-2 my-5">
+    <div className="w-[80%] sm:w-[60%] bg-white rounded-xl mx-auto px-5 py-2 my-5 ">
       <div className="user flex items-center gap-4 my-4">
         <img
           src="https://www.w3schools.com/howto/img_avatar.png"
