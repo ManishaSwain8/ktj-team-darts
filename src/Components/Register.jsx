@@ -19,6 +19,7 @@ export default function Register() {
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
+
     axios
       .post(
         "https://ap-south-1.aws.data.mongodb-api.com/app/data-iuasu/endpoint/data/v1/action/insertOne",
@@ -41,14 +42,29 @@ export default function Register() {
         {
           headers: {
             "api-key": "MbNUDJJjGFkcBsIaLzGSOJtOxZazEGwYR62FdeF1RrabOkbAPLpliilYCSK9iOQN",
-
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
           },
         }
       )
-      .then(() => {
+      .then((result) => {
         console.log("LOGIN");
+        localStorage.setItem(
+          "data",
+          JSON.stringify({
+            name: profileInfo.fullName,
+            email: profileInfo.email,
+            gender: profileInfo.gender || "other",
+            photo: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+            password: profileInfo.password,
+            institution: "GITA",
+            jobtitle: "Student",
+            state: "Odisha",
+            country: "INDIA",
+          })
+        );
+
+        localStorage.setItem("profileID", result.data.insertedId);
         navigate("/");
       })
       .catch(() => {
@@ -69,23 +85,50 @@ export default function Register() {
           <div className="text-xl flex-flex-col py-2 text-gray-500 ">
             <div>
               <label>Full name</label>
-              <input className="border rounded-full p-3 ml-0 w-96" type="text" name="fullName" value={profileInfo.fullName} onChange={onHandleChange} />
+              <input
+                class="bg-white appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                type="text"
+                name="fullName"
+                value={profileInfo.fullName}
+                onChange={onHandleChange}
+              ></input>
             </div>
             <div>
               <label>Email</label>
-              <input className="border rounded-full p-3 ml-0 w-96" type="gmail" name="email" value={profileInfo.email} onChange={onHandleChange} />
+              <input
+                class="bg-white appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                type="email"
+                name="email"
+                value={profileInfo.email}
+                onChange={onHandleChange}
+              ></input>
             </div>
             <div>
               <label>Password</label>
-              <input className="border rounded-full p-3 ml-0 w-96" type="password" name="password" value={profileInfo.password} onChange={onHandleChange} />
+              <input
+                class="bg-white appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                type="password"
+                name="password"
+                value={profileInfo.password}
+                onChange={onHandleChange}
+              ></input>
             </div>
-            <div>
+            {/* <div>
               <label>Confirm Password</label>
-              <input className="border rounded-full p-3 ml-0 w-96" type="password" name="confirmPassword" value={profileInfo.confirmPassword} onChange={onHandleChange} />
-            </div>
+              <input
+                class="bg-white appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                type="password"
+                name="confirmPassword"
+                value={profileInfo.confirmPassword}
+                onChange={onHandleChange}
+              ></input>
+            </div> */}
             <div>
               <label>Gender</label>
-              <select className="border rounded-full p-3 ml-0 w-96" type="text">
+              <select
+                className="bg-white appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange-500"
+                type="text"
+              >
                 <option> </option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>

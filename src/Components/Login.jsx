@@ -2,6 +2,10 @@ import React from "react";
 import red from "../assets/red.jpg";
 import { Link } from "react-router-dom";
 export default function Login() {
+  useCallback(() => {
+    first;
+  }, [second]);
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
       <div className="">
