@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import red from "../assets/red.jpg";
 import axios from "axios";
 
 export default function Register() {
+  const navigate = useNavigate();
   const [profileInfo, setProfileInfo] = useState({
     fullName: "",
     email: "",
@@ -49,9 +50,47 @@ export default function Register() {
           },
         }
       )
-      .then(() => {
-        console.log("LOGIN");
-        navigate("/");
+      .then((res) => {
+        console.log("Rgister");
+        axios
+          .post(
+            "https://ap-south-1.aws.data.mongodb-api.com/app/data-iuasu/endpoint/data/v1/action/findOne",
+            {
+              collection: "user",
+              database: "smartathon",
+              dataSource: "iitkgp-webathon",
+              filter: {
+                email: profileInfo.email,
+                password: profileInfo.password,
+              },
+            },
+            {
+              headers: {
+                "api-key":
+                  "MbNUDJJjGFkcBsIaLzGSOJtOxZazEGwYR62FdeF1RrabOkbAPLpliilYCSK9iOQN",
+                Accept: "*/*",
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+              },
+            }
+          )
+          .then((res) => {
+            console.log(res.data);
+            if (res.data.document !== null) {
+              localStorage.setItem(
+                "userInfo",
+                JSON.stringify(res.data.document)
+              );
+              localStorage.setItem("username", res.data.document.name);
+              localStorage.setItem("email", res.data.document.email);
+              localStorage.setItem(
+                "institution",
+                res.data.document.institution
+              );
+              localStorage.setItem("jobtitle", res.data.document.jobtitle);
+              navigate("/");
+            }
+          });
       })
       .catch(() => {
         console.error("ERROR");
@@ -66,7 +105,6 @@ export default function Register() {
           alt=""
         />
       </div>
-
       <div className="bg-white flex-none min-sm:flex justify-center">
         <form className="max-w-[400px] w-full  mx-auto bg-white  ">
           <h2 className="text-5xl font-bold text-[#9e1111] py-4">Register</h2>
@@ -131,9 +169,7 @@ export default function Register() {
                 Agree to our Terms of use & Privacy Policy.
               </p>
             </div>
-
             <br />
-
             <div className="justify-center">
               <button
                 onClick={onHandleSubmit}
@@ -141,9 +177,9 @@ export default function Register() {
               >
                 Let's go!
               </button>
-              <Link to={"login"} className="text-center">
+              <div onClick={() => navigate("/login")} className="text-center">
                 Already have an account?
-              </Link>
+              </div>
             </div>
           </div>
         </form>

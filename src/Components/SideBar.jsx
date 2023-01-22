@@ -14,22 +14,29 @@ export default function SideBar() {
         <div onClick={() => handleOnClick("/")} className={sideBarCss}>
           Home
         </div>
-        <div onClick={() => handleOnClick("/event")} className={sideBarCss}>
+        {/* <div onClick={() => handleOnClick("/event")} className={sideBarCss}>
           Event
+        </div> */}
+        <div
+          onClick={() => handleOnClick("/post-input")}
+          className={sideBarCss}
+        >
+          Create Event
         </div>
-        <div onClick={() => handleOnClick("trend")} className={sideBarCss}>
-          Trending
-        </div>
-        <div onClick={() => handleOnClick("view")} className={sideBarCss}>
-          Participants
-        </div>
-        <div onClick={() => handleOnClick("contact")} className={sideBarCss}>
+
+        {/* <div onClick={() => handleOnClick("contact")} className={sideBarCss}>
           Contact
         </div>
         <div onClick={() => handleOnClick("/about")} className={sideBarCss}>
           About
-        </div>
-        <div onClick={() => handleOnLogout("Logout")} className={sideBarCss}>
+        </div> */}
+        <div
+          onClick={() => {
+            localStorage.clear();
+            window.location.href = "/login";
+          }}
+          className={sideBarCss}
+        >
           LogOut
         </div>
       </div>

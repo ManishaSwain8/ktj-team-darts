@@ -34,9 +34,13 @@ export default function Login() {
         }
       )
       .then((res) => {
-        console.log(res);
-        if (res.document !== null) {
-          localStorage.setItem("userInfo", JSON.stringify(res.document));
+        console.log(res.data);
+        if (res.data.document !== null) {
+          localStorage.setItem("userInfo", JSON.stringify(res.data.document));
+          localStorage.setItem("username", res.data.document.name);
+          localStorage.setItem("email", res.data.document.email);
+          localStorage.setItem("institution", res.data.document.institution);
+          localStorage.setItem("jobtitle", res.data.document.jobtitle);
           navigate("/");
         }
       });
@@ -105,7 +109,12 @@ export default function Login() {
           <br />
           <br />
           <div className="items-center">
-            <p className="text-center">Don't have an account? Register.</p>
+            <p
+              onClick={() => navigate("/registration")}
+              className="text-center"
+            >
+              Don't have an account? Register.
+            </p>
           </div>
         </form>
       </div>
