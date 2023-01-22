@@ -44,6 +44,7 @@ export default function Register() {
             "api-key": "MbNUDJJjGFkcBsIaLzGSOJtOxZazEGwYR62FdeF1RrabOkbAPLpliilYCSK9iOQN",
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
+            Accept: "*/*",
           },
         }
       )
