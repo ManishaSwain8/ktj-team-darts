@@ -11,7 +11,7 @@ export default function Register() {
         />
       </div>
 
-      <div className="bg-white flex flex-col justify-center">
+      <div className="bg-white flex-none min-sm:flex justify-center">
         <form className="max-w-[400px] w-full  mx-auto bg-white  ">
           <h2 className="text-5xl font-bold text-[#9e1111] py-4">Register</h2>
           <p className="text-lg text-gray-400">
