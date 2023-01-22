@@ -1,4 +1,5 @@
 import "./App.css";
+
 import Home from "./Components/Home";
 import About from "./Components/About";
 import Login from "./Components/Login";
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/registration" element={<Register />}></Route>
       </Routes>
     </Router>
+
   );
 }
 
