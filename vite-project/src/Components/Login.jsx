@@ -25,7 +25,7 @@ export default function Login() {
           </div>
           <div className="flex justify-between">
             <p className="flex items-center mr-2">
-              <input className="mr-2" type="checkbox" />
+              <input className="mr-2 " type="checkbox" />
               Remember me
             </p>
             <a href="#forgot">Forgot Password?</a>
