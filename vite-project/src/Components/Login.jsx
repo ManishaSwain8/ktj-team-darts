@@ -1,6 +1,20 @@
 import React from "react";
 import red from "../assets/red.jpg";
+import { BsFacebook } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
+import { BsDiscord } from "react-icons/bs";
 export default function Login() {
+  const FOT_LIST = [
+    {
+      img: <BsFacebook size={30} />,
+    },
+    {
+      img: <BsLinkedin size={30} />,
+    },
+    {
+      img: <BsDiscord size={30} />,
+    },
+  ];
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
       <div className="">
@@ -51,8 +65,17 @@ export default function Login() {
           <div className="items-center">
             <p className="text-center">Or login with</p>
             <br />
-            <br />
 
+            <div className="flex gap-4">
+              {FOT_LIST.map((foot, index) => (
+                <div className="" key={index}>
+                  <a target="_blank" href="#">
+                    <div className="rounded-2xl">{foot.img}</div>
+                  </a>
+                </div>
+              ))}
+            </div>
+            <br />
             <p className="text-center">Don't have an account? Register.</p>
           </div>
         </form>

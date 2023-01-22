@@ -1,17 +1,17 @@
 import "./App.css";
 //import Home from "./Components/Home";
 //import About from "./Components/About";
-//import Login from "./Components/Login";
+import Login from "./Components/Login";
 //import Register from "./Components/Register";
-import Profile from "./Components/Profile";
+//import Profile from "./Components/Profile";
 function App() {
   return (
     <div>
-      {/* <Login /> */}
+      <Login />
       {/* <Register /> */}
       {/* <Home />
       <About /> */}
-      <Profile />
+      {/* <Profile /> */}
     </div>
   );
 }
