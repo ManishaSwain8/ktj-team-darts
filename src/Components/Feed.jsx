@@ -42,7 +42,7 @@ const Feed = () => {
         </a>
       </div>
       <div className="">
-        <button className="ml-auto bg-blue-400 px-6 py-2 block rounded-sm">
+        <button className="ml-auto bg-[#9e1111] hover:bg-[#d61313] px-6 py-2 block rounded-xl text-white  ">
           JOIN
         </button>
       </div>

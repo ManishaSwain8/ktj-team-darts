@@ -14,7 +14,7 @@ export default function Login() {
 
       <div className="bg-white flex flex-col justify-center ">
         <form className="max-w-[400px] w-full mx-auto bg-white ">
-          <h2 className="text-5xl font-bold text-center py-6 text-[#9e1111]">
+          <h2 className="text-5xl font-bold text-center py-6 text-[#9e1111] o">
             Welcome back!
           </h2>
           <div className="text-xl flex-flex-col py-2 text-gray-500 ">
